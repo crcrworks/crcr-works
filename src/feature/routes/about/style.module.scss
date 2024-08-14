@@ -1,0 +1,130 @@
+@use "@/style/theme";
+@use "@/style/utils";
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .introduction {
+    padding: 2em;
+    @include utils.space-y(3em);
+
+    .myself {
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+      .desc {
+        font-size: 1.5rem;
+      }
+    }
+
+    .infoContainer {
+      @include utils.space-y(1em);
+      .info {
+        .title {
+          font-size: 2rem;
+        }
+        .tagsContainer {
+          display: flex;
+          flex-wrap: wrap;
+          .tag {
+            padding: 0.5em 0.8em;
+            margin: 0.2em;
+            white-space: norwrap;
+            background: theme.$primary;
+            border-radius: 100em;
+          }
+        }
+      }
+    }
+
+    .accountContainer {
+      display: flex;
+      flex-direction: column;
+      @include utils.space-y(1em);
+
+      .title {
+        font-weight: bold;
+      }
+
+      .account {
+        $height: 3em;
+
+        display: flex;
+        flex-direction: row;
+        vertical-align: middle;
+
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: theme.$primary;
+          border-radius: 100em;
+          @include utils.size($height);
+        }
+
+        .text {
+          $padding-x: 1em;
+
+          position: relative;
+          left: -$height / 2;
+          z-index: -1;
+          height: $height;
+          padding-right: $padding-x;
+          padding-left: ($height / 2 - 0.2) + $padding-x;
+          line-height: $height;
+          color: theme.$bg-dark;
+          background: theme.$fg;
+          border-radius: 0 100em 100em 0;
+        }
+      }
+    }
+  }
+
+  .works {
+    padding: 2em;
+    background: theme.$bg-light;
+
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .titleContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      @include utils.space-x(1em);
+
+      .title {
+        font-size: 1.7rem;
+      }
+
+      hr {
+        flex: 1;
+        border: none;
+        border-top: 2px dashed theme.$fg;
+      }
+    }
+
+    .work {
+      display: flex;
+      flex-direction: row;
+      @include utils.space-x(1em);
+      @include utils.margin-y(1em);
+
+      .date {
+        padding: 0.5em 1em;
+        color: theme.$bg-dark;
+        background: theme.$fg;
+      }
+
+      .description {
+        @include utils.padding-y(0.5em);
+      }
+    }
+  }
+}

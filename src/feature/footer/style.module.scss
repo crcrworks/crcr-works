@@ -1,0 +1,22 @@
+@use "@/style/theme";
+
+.footer {
+  display: flex;
+  color: theme.$bg-dark;
+  background: theme.$fg;
+}
+
+.pagelink {
+  width: 7em;
+  text-align: center;
+
+  &:hover {
+    color: theme.$fg;
+    background: theme.$bg-dark;
+  }
+
+  &.active {
+    color: theme.$fg;
+    background: theme.$bg-dark;
+  }
+}
